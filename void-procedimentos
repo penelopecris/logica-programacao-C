@@ -1,23 +1,32 @@
 #include <stdio.h>
-#include <string.h>
 
 #define MAX_STRING_LENGTH 200
+
 float num1, num2;
-void numeros();
+
+// Declaração da função
+void obterNumeros();
 
 int main() {
-  void numeros();
-  
-
+    // Chama a função para obter os números
+    obterNumeros();
+    // O restante do seu código vai aqui
+    return 0;
 }
-  void numeros() {
 
-  printf("digite um número: ");
-  scanf("%f", num1);
-  printf("digite outro número, maior que o anterior: ");
-  scanf("%f", num2);
+// Definição da função para obter dois números do usuário
+void obterNumeros() {
+    printf("Digite um número: ");
+    scanf("%f", &num1);
 
-   if (num1 > num2) {
-    printf("Erro! O primeiro número deve ser menor que o segundo.\n");
-   }
-  }
+    printf("Digite outro número, maior que o anterior: ");
+    scanf("%f", &num2);
+
+    // Verifica se o primeiro número é maior ou igual ao segundo
+    while (num1 >= num2) {
+        printf("Erro! O segundo número deve ser maior que o primeiro.\n");
+        printf("Digite um novo número, maior que o anterior: ");
+        scanf("%f", &num2);
+    }
+}
+
